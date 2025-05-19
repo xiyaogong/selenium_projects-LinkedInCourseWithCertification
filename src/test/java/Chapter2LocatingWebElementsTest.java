@@ -18,7 +18,7 @@ public class Chapter2LocatingWebElementsTest {
 
     @BeforeClass
     public void setUp() {
-        var options= new ChromeOptions();
+        var options = new ChromeOptions();
         options.addArguments("--no-sandbox");
         driver = new ChromeDriver(options);
     }
@@ -61,50 +61,27 @@ public class Chapter2LocatingWebElementsTest {
     }
 
 
-    // ID <button id="login_btn">
-    // Name <button name="login_btn">
-    // class Name <button class="btn"> classes added for styling with CSS, change frequently
-    // Tag Name <button> by html tag, no attribute, lots of them, when there are multiple elements of the same type or no unique identifiers
-    // Link Text <a href="/">Click me</a> a for anchor, use text than link. link changed often
-    // CSS Selector <input type="password">. not only for input, input[type='password'] based on CSS properties(i think is with attribute)
-    // Xpath
-    // ############ html tags###
-    // button  rich in styles
-    // a
-    // div
-    // ul
-    // table
-    // span
-    // input
-    // ###### input types ###
-    // input:  text, email, password, tel, number, search, url, file, hidden
-    //         button(simple only show value), reset, submit, radio, checkbox, range, image, color, month
-    //         date, time, week
-    // ####### choose right locator
-    // 1.use id whenever possible
-    // 2.use name when no id
-    // 3.use class when no id or name
-    // 4.use CSS selector and/or Xpath for advanced locators.(has attribute at least, use the tagName+ attribute to search)
-    // 5.use tag name to locate multiple elements, or when no unique identifiers(attribute) are available.
-    // 6.use link text for anchor elements with no other attributes.
-    // 5 and 6 is the similar, no attribute
+
     @Test(enabled = false)
     public void testId() {
         driver.get("https://www.selenium.dev/selenium/web/formPage.html");
-        WebElement emailTextbox=driver.findElement(By.id("email"));
+        WebElement emailTextbox = driver.findElement(By.id("email"));
         logger.info("emailTextbox tagName: {}, text: {}", emailTextbox.getTagName(), emailTextbox.getText());
     }
 
 
     /**
-     *  input[type='radio'] cando multi selection
-     *  input[type='submit'][name='save']
+     * input[type='radio'] cando multi selection
+     * input[type='submit'][name='save']
      */
     @Test(enabled = false)
     public void testRadios() {
         driver.get("https://www.selenium.dev/selenium/web/formPage.html");
-        List<WebElement> radios =driver.findElements(By.cssSelector("input[type='radio']"));
-        logger.info("radios size:{} , {}", radios.size(),radios);
+        List<WebElement> radios = driver.findElements(By.cssSelector("input[type='radio']"));
+        logger.info("radios size:{} , {}", radios.size(), radios);
+
+        List<WebElement> radios2 = driver.findElements(By.xpath("//input[@type='radio']"));
+        logger.info("radios size:{} , {}", radios.size(), radios2);
     }
 
     /**
@@ -117,26 +94,27 @@ public class Chapter2LocatingWebElementsTest {
     public void testRelativeLocators() {
         driver.get("https://www.selenium.dev/selenium/web/formPage.html");
 
-        WebElement secondSubmit =driver.findElement(RelativeLocator.with(By.name("submit")).below(By.id("submit")));
+        WebElement secondSubmit = driver.findElement(RelativeLocator.with(By.name("submit")).below(By.id("submit")));
         logger.info("second submit value: {}", secondSubmit.getAttribute("value"));
     }
 
-    @Test(enabled = true)
+    @Test(enabled = false)
     public void chapter2Challenge() {
         driver.get("https://www.selenium.dev/selenium/web/formPage.html");
-        WebElement imageButton =driver.findElement(By.id("imageButton"));
+        WebElement imageButton = driver.findElement(By.id("imageButton"));
         logger.info("imageButton value: {}", imageButton.getAttribute("src"));
 
 
 //        WebElement submitClick =driver.findElement(By.cssSelector("input[type='submit'][value='Click!']"));
-        WebElement submitClick =driver.findElement(By.cssSelector("input[value='Click!']"));
+        WebElement submitClick = driver.findElement(By.cssSelector("input[value='Click!']"));
         logger.info("submitClick value: {}", submitClick.getAttribute("value"));
 
 
 //        WebElement firstNameTextBox =driver.findElement(By.cssSelector("input[type='text'][name='id-name1']"));
-        WebElement firstNameTextBox =driver.findElement(By.name("id-name1"));
+        WebElement firstNameTextBox = driver.findElement(By.name("id-name1"));
         logger.info("firstNameTextBox name: {}", firstNameTextBox.getAttribute("name"));
 
     }
+
 
 }
