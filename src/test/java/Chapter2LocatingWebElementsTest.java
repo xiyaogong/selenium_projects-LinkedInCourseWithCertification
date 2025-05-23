@@ -19,7 +19,7 @@ public class Chapter2LocatingWebElementsTest {
     @BeforeClass
     public void setUp() {
         var options = new ChromeOptions();
-        options.addArguments("--no-sandbox");
+        options.addArguments("--no-sandbox"); // option is for the code run on github codeSpaces, not needed in normal case
         driver = new ChromeDriver(options);
     }
 
