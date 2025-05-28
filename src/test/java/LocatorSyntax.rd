@@ -1,5 +1,6 @@
-
-
+-----
+html element
+-----
      ID <button id="login_btn">
      Name <button name="login_btn">
      class Name <button class="btn"> classes added for styling with CSS, change frequently
@@ -29,13 +30,17 @@
      5 and 6 is the similar, no attribute
 
 
+-----
+css selector 常用语法
+用来选择元素节点的 它定义的是如何给网页上的元素应用样式。
+CSS Selector 的设计初衷是“定位元素”，而不是定位样式
+-----
 
-
- ---
+-----
 
  # XPath 常用语法与示例
 
- ---
+-----
 
  ## 1. 绝对路径 vs 相对路径
 
@@ -114,4 +119,15 @@
 
  ---
 
- 如果你想，我还可以帮你写具体网页元素的 XPath，或者给你 Java/Selenium/Playwright 用 XPath 的代码示例！
+-----
+css selector vs xpath
+-----
+
+
+特点	CSS Selector	XPath
+是否标准	CSS 标准	XML 标准
+使用难度	简单	更灵活但稍复杂
+是否支持向上查找	❌ 不支持父节点查找	✅ 支持父节点查找（..）
+跨层级查找	✅ 支持（div li）	✅ 支持（//div//li）
+Selenium 支持	✅	✅
+浏览器调试支持	✅ DevTools 支持	❌ 只能在 console 用 $x() 测试
