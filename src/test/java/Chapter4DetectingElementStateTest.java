@@ -13,7 +13,7 @@ import org.testng.annotations.Test;
 import java.util.List;
 
 public class Chapter4DetectingElementStateTest {
-    static protected WebDriver driver;
+    private WebDriver driver;
     private static final Logger logger = LoggerFactory.getLogger(Chapter4DetectingElementStateTest.class);
 
 

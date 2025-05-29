@@ -10,6 +10,17 @@ import org.testng.annotations.Test;
 
 import java.time.Duration;
 
+/**
+ * ExpectedConditions.visibilityOf 存在且可见 displayed
+ * ExpectedConditions。invisibilityOfElementLocated 不存在或者不可见
+ * ExpectedConditions.presenceOfElementLocated 存在present
+ * ---------
+ * WebElement.isDisplayed()存在且可见 displayed
+ * try driver.findElement catch 存在present
+ * ----------
+ * WebElement.isEnabled()
+ * WebElement.isSelected()
+ */
 public class Chapter5WaitStrategiesTest {
     static protected WebDriver driver;
     private static final Logger logger = LoggerFactory.getLogger(Chapter5WaitStrategiesTest.class);

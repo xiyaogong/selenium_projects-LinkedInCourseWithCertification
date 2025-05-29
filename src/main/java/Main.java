@@ -5,6 +5,9 @@ import org.openqa.selenium.chrome.ChromeDriver;
 
 import java.time.Duration;
 
+/**
+ * first try
+ */
 public class Main {
     static protected WebDriver driver;
 
