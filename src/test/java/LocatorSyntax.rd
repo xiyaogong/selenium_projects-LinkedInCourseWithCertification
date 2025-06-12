@@ -12,10 +12,22 @@ html element
      button  rich in styles
      a
      div
-     ul
+     ul li
      table
      span
      input
+     label
+     select
+     option
+     textarea
+     body
+     header
+     header
+     footer
+     form
+     iframe
+     img
+     <label for="username">用户名</label>
      ###### input types ###
      input:  text, email, password, tel, number, search, url, file, hidden
              button(simple only show value), reset, submit, radio, checkbox, range, image, color, month
