@@ -20,6 +20,7 @@ html element
      select
      option
      textarea
+     article
      body
      header
      header
@@ -28,6 +29,7 @@ html element
      iframe
      img
      <label for="username">用户名</label>
+     <svg> 是 HTML 中的矢量图容器，用于绘制图标、图形、图表等。
      ###### input types ###
      input:  text, email, password, tel, number, search, url, file, hidden
              button(simple only show value), reset, submit, radio, checkbox, range, image, color, month
